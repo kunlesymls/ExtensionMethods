@@ -13,8 +13,7 @@ namespace System
         public static string GetDescription(this Enum enumValue)
         {
             var field = enumValue.GetType().GetField(enumValue.GetName());
-            var descriptionAttribute = field.GetCustomAttributes(typeof(DescriptionAttribute), false).FirstOrDefault() as DescriptionAttribute;
-            return descriptionAttribute == null ? enumValue.GetName() : descriptionAttribute.Description;
+            return !(field.GetCustomAttributes(typeof(DescriptionAttribute), false).FirstOrDefault() is DescriptionAttribute descriptionAttribute) ? enumValue.GetName() : descriptionAttribute.Description;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace ExtensionMethod.Tests
         public void ProperStringTest()
         {
             var stringValue = "joE is not  ";
-            Assert.AreEqual("Joe is not", stringValue.ToUpperString(false));
+            Assert.AreEqual("Joe is not", stringValue.ToUpperString());
         }
     }
 }
